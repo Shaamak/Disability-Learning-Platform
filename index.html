@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disability-Learning-Platform</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div id="login">
+    <div class="header">
+      <h1>Disability-Learning-Platform</h1>
+    </div>
+    <form>
+      <div class="group">
+        <input id="txtEmail" type="email">
+        <label for="txtEmail">Email</label>
+      </div>
+      <div class="group">
+        <input id="txtPassword" type="password">
+        <label for="txtPassword">Password</label>
+      </div>
+      
+      <button id="btnLogin" type="button" class="button buttonBlue">Log in</button>
+      <button id="btnSignup" type="button" class="button buttonBlue">Sign up</button>
+    </form>
+    
+  <div id="app">
+    
+    <form action="#" method="post">
+      <div class="group">
+        <div id="lblAuthState" class="authlabel"></div>
+      </div>
+    </form>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore-compat.js"></script>
+<script src="index.js"></script>
+
+  
+</body>
+
+</html>
