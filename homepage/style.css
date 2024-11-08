@@ -1,0 +1,203 @@
+/* Reset default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body styling */
+body {
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    padding-top: 60px;
+}
+
+/* Navbar container styling */
+.navbar-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #91A3B0;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navbar button styling */
+.navbar .home, .navbar .help, .dropdown button {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 4px;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.navbar .home:hover, .navbar .help:hover, .dropdown button:hover {
+    background: linear-gradient(45deg, #2575fc, #6a11cb);
+    transform: translateY(-2px);
+}
+
+/* Dropdown styling */
+.dropdown-container {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 3;
+    border-radius: 4px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    border-radius: 4px;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Main heading styling */
+.main-heading {
+    font-size: 60px;
+    color: #333;
+    text-align: center;
+    margin: 20px 0;
+    font-weight: 600;
+}
+
+/* Main container styling */
+.login-container {
+    text-align: center;
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Button styling */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.login-btn, .signup-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.signup-btn {
+    background-color: #008CBA;
+    color: white;
+}
+
+.login-btn:hover {
+    background-color: #45a049;
+}
+
+.signup-btn:hover {
+    background-color: #007bb5;
+}
+
+/* Styling for "Try it fast" text */
+.try-it-text {
+    font-size: 20px;
+    color: #090000;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Modal styling */
+/* Modal styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: absolute; /* Position relative to help button */
+    left: 0;
+    top: 150%; /* Position just below the button */
+    background-color: white;
+    border-radius: 8px;
+    width: 250px; /* Increased width for larger size */
+    padding: 20px; /* Added padding for a spacious look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+    text-align: center;
+}
+
+/* Content inside modal */
+.modal-content h2 {
+    margin-top: 0;
+    font-size: 20px; /* Increased font size for heading */
+}
+
+.modal-content p {
+    font-size: 16px; /* Increased font size for text */
+    margin: 8px 0;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 20px; /* Slightly larger close icon */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}

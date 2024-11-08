@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar-container">
+        <nav class="navbar">
+            <a href="#home" class="home">Home</a>
+            <div class="dropdown-container">
+                <div class="dropdown">
+                    <button class="dropbtn">Courses 
+                        <i class="arrow-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Course 1</a>
+                        <a href="#">Course 2</a>
+                        <a href="#">Course 3</a>
+                    </div>
+                </div>
+            </div>
+            <a href="#help" class="help">Help</a>
+        </nav>
+    </div>
+
+    <!-- Heading Section -->
+    <h2 class="main-heading">Learn Freely, Grow Confidently</h2>
+
+    <!-- Main Content -->
+    <div class="login-container">
+        <h1>Get Started!</h1>
+        <div class="button-container">
+            <button class="login-btn">Login</button>
+            <button class="signup-btn">Sign Up</button>
+        </div>
+        <!-- <p class="try-it-text">Try it first</p> -->
+    </div>
+    <p class="try-it-text">Try it first</p>
+
+    <!-- Help Modal -->
+    <div id="helpModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Contact Us</h2>
+            <p>For queries, reach us at:</p>
+            <p>Phone: +1234567890</p>
+            <p>Email: support@example.com</p>
+        </div>
+    </div>
+
+    <!-- JavaScript for Modal Functionality -->
+    <script>
+        // Get modal and elements
+        const helpModal = document.getElementById("helpModal");
+        const helpButton = document.querySelector(".help");
+        const closeButton = document.querySelector(".close");
+    
+        // Show modal on help button click and position it further left below the help button
+        helpButton.addEventListener("click", (event) => {
+            const rect = helpButton.getBoundingClientRect();
+            helpModal.style.left = `${rect.left - 100}px`; // Shift left by 80px for a more noticeable effect
+            helpModal.style.top = `${rect.bottom + window.scrollY}px`; // Position below the button
+            helpModal.style.display = "block";
+        });
+    
+        // Close modal on close button click
+        closeButton.addEventListener("click", () => {
+            helpModal.style.display = "none";
+        });
+    
+        // Close modal when clicking outside of modal content
+        window.addEventListener("click", (event) => {
+            if (event.target !== helpModal && event.target !== helpButton && !helpModal.contains(event.target)) {
+                helpModal.style.display = "none";
+            }
+        });
+    </script>
+    
+    
+    
+</body>
+</html>
