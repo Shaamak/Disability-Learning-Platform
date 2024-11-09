@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses Page</title>
+  <link rel="stylesheet" href="course.css">
+</head>
+<body>
+
+<header>
+  <h1>Our Course Selection</h1>
+  <p>Choose from a variety of foundational courses to start your learning journey</p>
+</header>
+
+<div class="course-container">
+  <div class="course-card">
+    <h2>Introduction to Python</h2>
+    <p>Learn the basics of Python programming with hands-on examples.</p>
+    <button class="enroll-button" onclick="showPopup()">Enroll Now</button>
+  </div>
+
+  <div class="course-card">
+    <h2>Basic Math Concepts</h2>
+    <p>Strengthen your math foundation with essential concepts.</p>
+    <button class="enroll-button" onclick="showPopup()">Enroll Now</button>
+  </div>
+
+  <div class="course-card">
+    <h2>Science Essentials</h2>
+    <p>Explore fundamental science topics with engaging activities.</p>
+    <button class="enroll-button" onclick="showPopup()">Enroll Now</button>
+  </div>
+
+  <div class="course-card">
+    <h2>Web Development Basics</h2>
+    <p>Get started with web development and learn to create your first website.</p>
+    <button class="enroll-button" onclick="showPopup()">Enroll Now</button>
+  </div>
+</div>
+
+<!-- Popup Modal -->
+<div id="popup" class="popup-overlay">
+  <div class="popup-content">
+    <h3>Select Accessibility Option</h3>
+    <button class="option-btn" onclick="startTextToSpeech()">Text to Speech</button>
+    <button class="option-btn" onclick="startSpeechToText()">Speech to Text</button>
+    <button class="close-btn" onclick="closePopup()">Close</button>
+  </div>
+</div>
+
+<script>
+  // Show the pop-up when "Enroll Now" is clicked
+  function showPopup() {
+    document.getElementById('popup').style.display = 'flex';
+  }
+
+  // Close the pop-up
+  function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+  }
+
+  // Placeholder functions for accessibility options
+  function startTextToSpeech() {
+    alert("Text to Speech activated!");
+  }
+
+  function startSpeechToText() {
+    alert("Speech to Text activated!");
+  }
+</script>
+
+</body>
+</html>
