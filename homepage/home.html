@@ -33,13 +33,13 @@
     <!-- Main Content -->
     <div class="login-container">
         <h1>Get Started!</h1>
-        <div class="button-container">
-            <button class="login-btn">Login</button>
-            <button class="signup-btn">Sign Up</button>
+        <div id="button-container">
+            <button id="regbutton">Register</button>
+            <!-- <button class="signup-btn">Sign Up</button> -->
         </div>
         <!-- <p class="try-it-text">Try it first</p> -->
     </div>
-    <p class="try-it-text">Try it first</p>
+    <!-- <p class="try-it-text">Try it first</p> -->
 
     <!-- Help Modal -->
     <div id="helpModal" class="modal">
@@ -71,14 +71,17 @@
         closeButton.addEventListener("click", () => {
             helpModal.style.display = "none";
         });
-    
-        // Close modal when clicking outside of modal content
-        window.addEventListener("click", (event) => {
-            if (event.target !== helpModal && event.target !== helpButton && !helpModal.contains(event.target)) {
-                helpModal.style.display = "none";
-            }
-            window.location.href = "index.html";
-        });
+
+        document.getElementById("regbutton").addEventListener("click", function(event) {
+      event.preventDefault(); // Prevents the default form submission
+
+      // Insert Firebase or validation logic here if needed
+      
+      // Redirect to login page after successful registration
+      window.location.href = "index.html";
+    });
+       // Close modal when clicking outside of modal content
+       
     </script>
     
     
