@@ -1,4 +1,5 @@
-/* Reset default styling */
+
+* Reset default styling */
 * {
     margin: 0;
     padding: 0;
@@ -106,14 +107,14 @@ body {
 }
 
 /* Main container styling */
-.login-container {
+/* .login-container {
     text-align: center;
     background-color: white;
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     margin-top: 20px;
-}
+} */
 
 h1 {
     margin-bottom: 20px;
@@ -122,13 +123,13 @@ h1 {
 }
 
 /* Button styling */
-.button-container {
+/* .button-container {
     display: flex;
     justify-content: center;
     gap: 20px;
-}
+} */
 
-.login-btn, .signup-btn {
+#regbutton {
     padding: 15px 30px;
     font-size: 18px;
     border: none;
@@ -136,8 +137,18 @@ h1 {
     cursor: pointer;
     transition: all 0.3s ease;
 }
+#button-container, #regbutton {
+    padding: 12px 24px;
+    font-size: 16px;
+    color:white; /* Ensure this is a visible color */
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
-.login-btn {
+
+/* .login-btn {
     background-color: #4CAF50;
     color: white;
 }
@@ -145,15 +156,15 @@ h1 {
 .signup-btn {
     background-color: #008CBA;
     color: white;
-}
+} */
 
-.login-btn:hover {
+#regbutton:hover {
     background-color: #45a049;
 }
 
-.signup-btn:hover {
+/* .signup-btn:hover {
     background-color: #007bb5;
-}
+} */
 
 /* Styling for "Try it fast" text */
 .try-it-text {
