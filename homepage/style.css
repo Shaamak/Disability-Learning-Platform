@@ -129,7 +129,9 @@ h1 {
     gap: 20px;
 } */
 
-#regbutton {
+
+
+#regbutton { 
     padding: 15px 30px;
     font-size: 18px;
     border: none;
@@ -137,6 +139,8 @@ h1 {
     cursor: pointer;
     transition: all 0.3s ease;
 }
+/* Ensure this is a visible color */
+
 #button-container, #regbutton {
     padding: 12px 24px;
     font-size: 16px;
@@ -157,6 +161,7 @@ h1 {
     background-color: #008CBA;
     color: white;
 } */
+
 
 #regbutton:hover {
     background-color: #45a049;
