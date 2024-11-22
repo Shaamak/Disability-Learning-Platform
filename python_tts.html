@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-to-Speech Integration</title>
+    <style>
+        /* Basic styling */
+        .tts-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .tts-button:hover {
+            background-color: #45a049;
+        }
+        #welcome-text{
+            font-size:32px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Python Essentials</h1>
+    <p id="welcome-text"> Understanding input and output operations is fundamental to Python programming. With the print() function, you can display output in various formats, while the input() function enables interaction with users by gathering input during program execution.
+
+        Python Basic Input and Output
+        In this introductory guide, we’ll explore the essentials of Python’s basic input and output functionalities, empowering you to efficiently interact with users and display information.
+        
+        Print Output in Python
+        At its core, printing output in Python is straightforward, thanks to the print() function. This function allows us to display text, variables, and expressions on the console. Let’s begin with the basic usage of the print() function:
+        
+<br>        Output formatting in Python with various techniques including the format() method, manipulation of the sep and end parameters, f-strings, and the versatile % operator. These methods enable precise control over how data is displayed, enhancing the readability and effectiveness of your Python programs.<br>
+Read Input From stdin in Python using sys.stdin
+First we need to import sys module. sys.stdin can be used to get input from the command line directly. It used is for standard input. It internally calls the input() method. Furthermore, it, also, automatically adds ‘\n’ after each sentence. <br>
+
+</p>
+    <button class="tts-button" onclick="textToSpeech('welcome-text')">Listen</button>
+
+    
+    <script>
+        function textToSpeech(elementId) {
+            // Get the text from the specified element
+            const text = document.getElementById(elementId).innerText;
+
+            // Check if the browser supports the SpeechSynthesis API
+            if ('speechSynthesis' in window) {
+                // Initialize a new SpeechSynthesisUtterance object
+                const speech = new SpeechSynthesisUtterance(text);
+
+                // Optional settings
+                speech.lang = 'en-US';
+                speech.pitch = 1;
+                speech.rate = 1;
+
+                // Speak the text
+                window.speechSynthesis.speak(speech);
+            } else {
+                alert("Sorry, your browser does not support Text-to-Speech.");
+            }
+        }
+    </script>
+</body>
+</html>
