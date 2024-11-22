@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-to-Speech Integration</title>
+    <style>
+        /* Basic styling */
+        .tts-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .tts-button:hover {
+            background-color: #45a049;
+        }
+        #welcome-text{
+            font-size:32px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Introduction To Web Development</h1>
+    <p id="welcome-text">HTML is the HyperText Markup Language for web, used by billions of websites to create the pages you see every day. Want to learn HTML from scratch and make your web pages? This HTML tutorial is the one-stop destination for you!
+
+        In this HTML tutorial, you will learn how to use HTML to create and style web pages. You will start with HTML fundamentals, such as basic HTML tags and their attributes, classes, layout, and responsiveness. Then, you will move on to advanced HTML5 topics, such as HTML forms, media, APIs, and more. By the end of this tutorial, you will have a solid foundation in HTML.<br>
+        HTML uses predefined tags and elements that instruct the browser on how to display the content. HTML elements include an opening tag, some content, and a closing tag. It’s important to remember to include closing tags. If omitted, the browser applies the effect of the opening tag until the end of the page.
+
+This section will dive into the basic structure of an HTML page, which includes essential building-block elements like doctype declaration, HTML, head, title, and body elements.<br>
+
+What Are HTML Elements?
+HTML (Hypertext Markup Language) is the backbone of web development. It allows us to create structured and interactive web pages. In this article, we’ll learn about the important aspects of HTML elements, their syntax, and best practices.
+</p>
+    <button class="tts-button" onclick="textToSpeech('welcome-text')">Listen</button>
+
+    
+    <script>
+        function textToSpeech(elementId) {
+            // Get the text from the specified element
+            const text = document.getElementById(elementId).innerText;
+
+            // Check if the browser supports the SpeechSynthesis API
+            if ('speechSynthesis' in window) {
+                // Initialize a new SpeechSynthesisUtterance object
+                const speech = new SpeechSynthesisUtterance(text);
+
+                // Optional settings
+                speech.lang = 'en-US';
+                speech.pitch = 1;
+                speech.rate = 1;
+
+                // Speak the text
+                window.speechSynthesis.speak(speech);
+            } else {
+                alert("Sorry, your browser does not support Text-to-Speech.");
+            }
+        }
+    </script>
+</body>
+</html>
