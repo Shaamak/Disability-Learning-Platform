@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-to-Speech Integration</title>
+    <style>
+        /* Basic styling */
+        .tts-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .tts-button:hover {
+            background-color: #45a049;
+        }
+        #welcome-text{
+            font-size:32px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Maths Basics</h1>
+    <p id="welcome-text"> 
+        
+
+
+Solve for x in linear equations and simplify expressions.
+Equation example: 2x + 3 = 7
+Solution: x = 2
+
+<br>
+Standard form: ax^2 + bx + c = 0
+Solutions are given by the quadratic formula:
+x = (-b ± √(b^2 - 4ac)) / 2a
+
+<br>
+Common trigonometric ratios:
+sin(θ) = opposite / hypotenuse
+cos(θ) = adjacent / hypotenuse
+tan(θ) = opposite / adjacent
+<br>
+Pythagorean identity:
+sin^2(θ) + cos^2(θ) = 1
+
+<br>
+Derivatives and Integrals are the foundations of calculus.
+Derivative example:
+If f(x) = x^2, then f'(x) = 2x
+
+Integral example:
+∫ x dx = (x^2 / 2) + C
+
+<br>
+Matrix addition, subtraction, and multiplication.
+Matrix multiplication:
+If A is an m × n matrix and B is an n × p matrix, the resulting matrix C is m × p.
+
+<br>
+Basic concepts:
+P(A) = Number of favorable outcomes / Total number of outcomes
+P(A ∩ B) = P(A) * P(B) for independent events
+
+<br>
+Mean: Sum of all data points / Number of data points
+Median: Middle value of an ordered data set
+Mode: Most frequently occurring value in a data set
+
+Standard deviation measures the dispersion of a dataset relative to its mean.
+
+<br>
+Properties of shapes such as triangles, circles, and polygons.
+Area of a circle:
+A = πr^2
+Circumference of a circle:
+C = 2πr
+
+
+
+</p>
+    <button class="tts-button" onclick="textToSpeech('welcome-text')">Listen</button>
+
+    
+    <script>
+        function textToSpeech(elementId) {
+            // Get the text from the specified element
+            const text = document.getElementById(elementId).innerText;
+
+            // Check if the browser supports the SpeechSynthesis API
+            if ('speechSynthesis' in window) {
+                // Initialize a new SpeechSynthesisUtterance object
+                const speech = new SpeechSynthesisUtterance(text);
+
+                // Optional settings
+                speech.lang = 'en-US';
+                speech.pitch = 1;
+                speech.rate = 1;
+
+                // Speak the text
+                window.speechSynthesis.speak(speech);
+            } else {
+                alert("Sorry, your browser does not support Text-to-Speech.");
+            }
+        }
+    </script>
+</body>
+</html>
