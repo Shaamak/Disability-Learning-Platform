@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-to-Speech Integration</title>
+    <style>
+        /* Basic styling */
+        .tts-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .tts-button:hover {
+            background-color: #45a049;
+        }
+        #welcome-text{
+            font-size:32px;
+        }
+    </style>
+</head>
+<body>
+    <h1>C++ Essentials</h1>
+    <p id="welcome-text"> Variables in C++ is a name given to a memory location. It is the basic unit of storage in a program. 
+
+        The value stored in a variable can be changed during program execution.
+        A variable is only a name given to a memory location, all the operations done on the variable effects that memory location.
+        In C++, all the variables must be declared before use.<br> 
+        Rules For Declaring Variable<br>
+        The name of the variable contains letters, digits, and underscores.
+        The name of the variable is case sensitive (ex Arr and arr both are different variables).
+        The name of the variable does not contain any whitespace and special characters (ex #,$,%,*, etc).
+        All the variable names must begin with a letter of the alphabet or an underscore(_). 
+<br>
+        C++ supports a wide variety of data types and the programmer can select the data type appropriate to the needs of the application. Data types specify the size and types of values to be stored. However, storage representation and machine instructions to manipulate each data type differ from machine to machine, although C++ instructions are identical on all machines.
+
+C++ supports the following data types:<br>
+
+1.Primary or Built-in or Fundamental data type<br>
+2.Derived data types<br>
+3.User-defined data types<br>
+    </p>
+    <button class="tts-button" onclick="textToSpeech('welcome-text')">Listen</button>
+
+    
+    <script>
+        function textToSpeech(elementId) {
+            // Get the text from the specified element
+            const text = document.getElementById(elementId).innerText;
+
+            // Check if the browser supports the SpeechSynthesis API
+            if ('speechSynthesis' in window) {
+                // Initialize a new SpeechSynthesisUtterance object
+                const speech = new SpeechSynthesisUtterance(text);
+
+                // Optional settings
+                speech.lang = 'en-US';
+                speech.pitch = 1;
+                speech.rate = 1;
+
+                // Speak the text
+                window.speechSynthesis.speak(speech);
+            } else {
+                alert("Sorry, your browser does not support Text-to-Speech.");
+            }
+        }
+    </script>
+</body>
+</html>
