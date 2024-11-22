@@ -14,25 +14,25 @@
 </header>
 
 <div class="course-container">
-  <div class="course-card">
+  <div class="course-card" onclick="showOptions('python.html')">
     <h2>Introduction to Python</h2>
     <p>Learn the basics of Python programming with hands-on examples.</p>
     <button class="enroll-button" onclick="showPopup()">Enroll Now</button>
   </div>
 
-  <div class="course-card">
+  <div class="course-card" onclick="showOptions('math.html')">
     <h2>Basic Math Concepts</h2>
     <p>Strengthen your math foundation with essential concepts.</p>
     <button class="enroll-button" onclick="showPopup()">Enroll Now</button>
   </div>
 
-  <div class="course-card">
-    <h2>Science Essentials</h2>
-    <p>Explore fundamental science topics with engaging activities.</p>
+  <div class="course-card" onclick="showOptions('c++.html')">
+    <h2>C++ Essentials</h2>
+    <p>Explore fundamental c++ with engaging activities.</p>
     <button class="enroll-button" onclick="showPopup()">Enroll Now</button>
   </div>
 
-  <div class="course-card">
+  <div class="course-card" onclick="showOptions('webdev.html')">
     <h2>Web Development Basics</h2>
     <p>Get started with web development and learn to create your first website.</p>
     <button class="enroll-button" onclick="showPopup()">Enroll Now</button>
@@ -43,8 +43,8 @@
 <div id="popup" class="popup-overlay">
   <div class="popup-content">
     <h3>Select Accessibility Option</h3>
-    <button class="option-btn" onclick="startTextToSpeech()">Text to Speech</button>
-    <button class="option-btn" onclick="startSpeechToText()">Speech to Text</button>
+    <button class="option-btn" onclick="handleOption('tts')">Text to Speech</button>
+    <button class="option-btn" onclick="handleOption('speechToText')">Speech to Text</button>
     <button class="close-btn" onclick="closePopup()">Close</button>
   </div>
 </div>
@@ -61,13 +61,38 @@
   }
 
   // Placeholder functions for accessibility options
-  function startTextToSpeech() {
-    alert("Text to Speech activated!");
-  }
+  
 
-  function startSpeechToText() {
-    alert("Speech to Text activated!");
+  function showOptions(course){
+    window.selectedCoursePage=course;
+    document.getElementById('popup').style.display='block';
   }
+  function handleOption(option){
+    if( option==='speechToText'){
+        window.location.href=window.selectedCoursePage;
+      }
+        
+//       function redirectTotts(option) {
+//     if (option === 'tts') {
+//       // Assuming TTS files are named with a pattern like 'course_tts.html'
+//       const ttsPage = window.selectedCoursePage.replace('.html', '_tts.html');
+//       window.location.href = ttsPage;
+//     }
+//   }   
+
+// }
+
+
+  if (option === 'tts') {
+    // Replace the `.html` extension with `_tts.html` to navigate to the TTS version of the course
+    const ttsPage = window.selectedCoursePage.replace('.html', '_tts.html');
+    window.location.href = ttsPage;
+  }
+}
+
+  
+  
+  
 </script>
 
 </body>
